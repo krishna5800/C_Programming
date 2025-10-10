@@ -1,3 +1,3 @@
 # C_Programming
 
-Programs & assignments for Logic Building Batch
+Programs & assignments for Logic Building Batch for C-Programming
