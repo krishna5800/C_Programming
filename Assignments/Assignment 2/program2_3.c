@@ -1,20 +1,18 @@
-//Accept one number from user and print that number of * on screen
+//Accept one number from user if number is less than 10 then print "Hello" otherwise print "Demo"
 
 #include<stdio.h>
 
 void Display(int iNo)
 {
-    //Write Updator
-    if(iNo < 0)
+    if(iNo < 10)
     {
-        iNo = -iNo;
+        printf("Hello");
     }
-
-    while(iNo > 0)
+    else
     {
-        printf("*");
-        iNo--;
+        printf("Demo");
     }
+    
 }
 
 int main()
