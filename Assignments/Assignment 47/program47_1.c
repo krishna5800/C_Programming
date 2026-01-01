@@ -1,7 +1,6 @@
-// 5. Increment Each Node Value by 1
-// Increase each element by 1
+// 1. Print List in Reverse Order
 
-// void IncrementAll(PPNODE Head);
+// void DisplayReverse (PNODE Head);
 
 #include<stdio.h>
 #include<stdlib.h>
@@ -61,16 +60,41 @@ int Count(PNODE first)
     return iCount;
 }
 
-void IncrementAll(PPNODE first)
+void DisplayReverse(PNODE first)
 {
+    int iSize = 0;
+    int iCnt = 0;
     PNODE temp = NULL;
+    int *verify = NULL;
 
-    temp = (*first);
+    iSize = Count(first);
+
+    int *ptr = NULL;
+
+    ptr = (int*)malloc(iSize*sizeof(int));
+
+    temp = first;
+    verify = ptr;
 
     while(temp != NULL)
     {
-        temp->data = (temp->data + 1);
+        (*verify) = temp->data;
         temp = temp->next;
+        verify++;
+    }
+
+    iCnt = 0;
+
+    while(iCnt < (iSize-1))
+    {
+        ptr++;
+        iCnt++;
+    }
+
+    for(iCnt = (iSize-1); iCnt >= 0; iCnt--)
+    {
+        printf("%d\n", (*ptr));
+        ptr--;
     }
 }
 
@@ -90,11 +114,9 @@ int main()
 
     printf("Number of nodes are : %d\n", iRet);
 
-    IncrementAll(&head);
+    printf("LL in reverse order : \n");
 
-    printf("After Increment All function call\n");
-
-    Display(head);
+    DisplayReverse(head);
 
     return 0;
 }
